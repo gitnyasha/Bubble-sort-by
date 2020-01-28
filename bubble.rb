@@ -20,8 +20,8 @@ def bubble_sort_by(array)
   (array.length - 1).times do
     sorted = false
     (x - 1).times do |i|
-      if yield(array[i], array[i + 1]).positive?
-        array[i], array[i + 1] = array[i + 1], array[i]
+      if array[i] < array[i + 1]
+        array[i + 1], array[i] = array[i], array[i + 1]
         sorted = true
       end
     end
