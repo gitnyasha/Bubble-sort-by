@@ -17,12 +17,12 @@ puts bubble_sort([4, 3, 78, 2, 0, 2])
 
 def bubble_sort_by(array)
   x = array.length
-  loop do
+  (array.length - 1).times do
     sorted = false
     (x - 1).times do |i|
-      if array[i] < array[i + 1]
-        array[i + 1], array[i] = array[i], array[i + 1]
-      sorted = true
+      if yield(array[i], array[i + 1]).positive?
+        array[i], array[i + 1] = array[i + 1], array[i]
+        sorted = true
       end
     end
     break unless sorted
