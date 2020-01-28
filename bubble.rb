@@ -8,11 +8,11 @@ def bubble_sort_by(array)
         sorted = true
       end
     end
-    break if not sorted
+    break unless sorted
   end
   array
 end
 
-puts array = bubble_sort_by(["hi", "hello", "hey"]) do |left, right|
+puts bubble_sort_by(%w[hi hello hey]) do |left, right|
   left.length - right.length
 end
